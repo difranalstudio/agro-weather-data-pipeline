@@ -1,0 +1,35 @@
+# ambiente virtual
+venv/
+.venv/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# variáveis de ambiente
+.env
+
+# notebooks
+.ipynb_checkpoints/
+
+# logs
+*.log
+
+# sistema operacional
+.DS_Store
+Thumbs.db
+
+# vscode
+.vscode/
+
+# banco local temporário
+*.db
+
+# pytest
+.pytest_cache/
+
+# coverage
+.coverage
+htmlcov/
