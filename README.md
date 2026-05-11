@@ -1,8 +1,8 @@
 # Weather Data Pipeline
 
-Pipeline de engenharia de dados para coleta e processamento de dados climáticos.
+Pipeline de engenharia de dados para coleta e processamento de dados climáticos com foco em aplicações no agronegócio.
 
-## Tecnologias
+## Stack
 
 - Python
 - pandas
@@ -12,32 +12,59 @@ Pipeline de engenharia de dados para coleta e processamento de dados climáticos
 
 ## Arquitetura
 
+```text
 API → Extract → Transform → Load → PostgreSQL
+```
 
-## Features
+## Estrutura do projeto
 
-- Coleta via API
-- Quality checks
-- Containerização
-- UPSERT
-- Prevenção de duplicidade
+```text
+weather_data_pipeline/
+├── src/
+│   ├── __init__.py
+│   ├── extract.py
+│   ├── transform.py
+│   ├── load.py
+│   └── pipeline.py
+├── docker-compose.yml
+├── requirements.txt
+├── .env
+└── README.md
+```
 
 ## Como executar
 
-### Subir banco
+### 1. Subir o banco
 
 ```bash
 docker compose up -d
 ```
 
-### Ativar ambiente
+### 2. Ativar ambiente virtual
+
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-### Rodar pipeline
+### 3. Instalar dependências
 
 ```bash
-python pipeline.py
+pip install -r requirements.txt
 ```
+
+### 4. Executar pipeline
+
+```bash
+python -m src.pipeline
+```
+
+## Features
+
+- API ingestion
+- Data validation
+- Quality checks
+- UPSERT strategy
+- Environment variables
+- Dockerized database
